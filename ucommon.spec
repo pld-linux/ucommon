@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
+%bcond_with	gnutls		# use GnuTLS instead of OpenSSL [needs update: recent gnutls no longer uses libgcrypt]
 #
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
@@ -13,8 +14,9 @@ Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
 # Source0-md5:	2aa7bec3ad5ef9f83149811d9424f291
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
+%{?with_gnutls:BuildRequires:	gnutls-devel >= 2.8.0}
 BuildRequires:	libstdc++-devel >= 5:3.0
-BuildRequires:	openssl-devel >= 0.9.7
+%{!?with_gnutls:BuildRequires:	openssl-devel >= 0.9.7}
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,8 +45,9 @@ Summary:	Header files for uCommon C++ library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki uCommon C++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+%{?with_gnutls:Requires:	gnutls-devel >= 2.8.0}
 Requires:	libstdc++-devel >= 5:3.0
-Requires:	openssl-devel >= 0.9.7
+%{!?with_gnutls:Requires:	openssl-devel >= 0.9.7}
 
 %description devel
 Header files for uCommon C++ library.
@@ -91,16 +94,9 @@ uCommon - aplikacje systemowe i pomocnicze.
 %setup -q
 
 %build
-# if ac/am/lt/* rebuilding is necessary, do it in this order and add
-# appropriate BuildRequires
-#%{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__autoheader}
-#%{__automake}
 %configure \
 	ac_cv_lib_nsl_inet_ntop=no \
-	--with-sslstack=openssl
+	--with-sslstack=%{?with_gnutls:gnutls}%{!?with_gnutls:openssl}
 %{__make}
 
 %if %{with apidocs}
