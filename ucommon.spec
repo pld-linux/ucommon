@@ -6,12 +6,12 @@
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
-Version:	5.1.2
+Version:	5.2.0
 Release:	1
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
-# Source0-md5:	afc0602984b567479689027747bae974
+# Source0-md5:	c113a611a8b11a37b5d477ec1a0b2d9e
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 2.8.0}
@@ -159,12 +159,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/args
 %attr(755,root,root) %{_bindir}/car
 %attr(755,root,root) %{_bindir}/mdsum
+%attr(755,root,root) %{_bindir}/pdetach
 %attr(755,root,root) %{_bindir}/scrub-files
 %attr(755,root,root) %{_bindir}/sockaddr
 %attr(755,root,root) %{_bindir}/zerofill
 %{_mandir}/man1/args.1*
 %{_mandir}/man1/car.1*
 %{_mandir}/man1/mdsum.1*
+%{_mandir}/man1/pdetach.1*
 %{_mandir}/man1/scrub-files.1*
 %{_mandir}/man1/sockaddr.1*
 %{_mandir}/man1/zerofill.1*
