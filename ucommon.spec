@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
-%bcond_with	gnutls		# use GnuTLS instead of OpenSSL [needs update: recent gnutls no longer uses libgcrypt]
+%bcond_with	gnutls		# use GnuTLS instead of OpenSSL
 #
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
-Version:	6.0.0
+Version:	6.0.1
 Release:	1
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
-# Source0-md5:	22cb20d2167d9cb9998791ee2f8b9414
+# Source0-md5:	657a8317a59a3051afc46365cd8fa20f
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 2.8.0}
@@ -95,7 +95,6 @@ uCommon - aplikacje systemowe i pomocnicze.
 
 %build
 %configure \
-	ac_cv_lib_nsl_inet_ntop=no \
 	--with-sslstack=%{?with_gnutls:gnutls}%{!?with_gnutls:openssl}
 %{__make}
 
