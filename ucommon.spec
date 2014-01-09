@@ -6,12 +6,12 @@
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
-Version:	6.0.7
+Version:	6.1.0
 Release:	1
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
-# Source0-md5:	0774a0315beac7b26ec75d44d925f208
+# Source0-md5:	3509b5065f673a0357383a9fd90a8c1b
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 2.8.0}
@@ -157,6 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/args
 %attr(755,root,root) %{_bindir}/car
+%attr(755,root,root) %{_bindir}/keywait
 %attr(755,root,root) %{_bindir}/mdsum
 %attr(755,root,root) %{_bindir}/pdetach
 %attr(755,root,root) %{_bindir}/scrub-files
@@ -164,6 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/zerofill
 %{_mandir}/man1/args.1*
 %{_mandir}/man1/car.1*
+%{_mandir}/man1/keywait.1*
 %{_mandir}/man1/mdsum.1*
 %{_mandir}/man1/pdetach.1*
 %{_mandir}/man1/scrub-files.1*
