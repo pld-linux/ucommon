@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_with	gnutls		# use GnuTLS instead of OpenSSL
-#
+
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
 Version:	6.1.0
-Release:	1
+Release:	2
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
@@ -37,8 +37,8 @@ zastosowaniach, takich jak systemy wykorzystujące uClibc, wraz z
 obsługą wątków POSIX. Z tego powodu uCommon wyłącza elementy języka
 pochłaniające pamięć lub wprowadzające narzut w czasie działania,
 takie jak rtti czy obsługa wyjątków i zakłada, że aplikacje będą
-linkowane z innymi bibliotekami opartymi na czystym C zamiast
-narzutu pełnej biblioteki standardowej C++ czy innych szkieletów klas.
+linkowane z innymi bibliotekami opartymi na czystym C zamiast narzutu
+pełnej biblioteki standardowej C++ czy innych szkieletów klas.
 
 %package devel
 Summary:	Header files for uCommon C++ library
@@ -71,6 +71,9 @@ Statyczna biblioteka uCommon C++.
 Summary:	uCommon C++ API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki uCommon C++
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API and internal documentation for uCommon C++ library.
