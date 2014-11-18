@@ -6,15 +6,15 @@
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
-Version:	6.1.11
+Version:	6.2.2
 Release:	1
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
-# Source0-md5:	5ef74ea2a71213d047c8e593f9309311
+# Source0-md5:	38d4351fb1e694a3f77bd5153d59d976
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
-%{?with_gnutls:BuildRequires:	gnutls-devel >= 2.8.0}
+%{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0.0}
 BuildRequires:	libstdc++-devel >= 5:3.0
 %{!?with_gnutls:BuildRequires:	openssl-devel >= 0.9.7}
 BuildRequires:	pkgconfig
@@ -45,7 +45,7 @@ Summary:	Header files for uCommon C++ library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki uCommon C++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-%{?with_gnutls:Requires:	gnutls-devel >= 2.8.0}
+%{?with_gnutls:Requires:	gnutls-devel >= 3.0.0}
 Requires:	libstdc++-devel >= 5:3.0
 %{!?with_gnutls:Requires:	openssl-devel >= 0.9.7}
 
@@ -121,11 +121,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYRIGHT ChangeLog NEWS README README.secure SUPPORT TODO
 %attr(755,root,root) %{_libdir}/libcommoncpp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcommoncpp.so.6
+%attr(755,root,root) %ghost %{_libdir}/libcommoncpp.so.7
 %attr(755,root,root) %{_libdir}/libucommon.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libucommon.so.6
+%attr(755,root,root) %ghost %{_libdir}/libucommon.so.7
 %attr(755,root,root) %{_libdir}/libusecure.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libusecure.so.6
+%attr(755,root,root) %ghost %{_libdir}/libusecure.so.7
 
 %files devel
 %defattr(644,root,root,755)
