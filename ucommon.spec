@@ -6,12 +6,12 @@
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
-Version:	6.3.5
+Version:	6.4.4
 Release:	1
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
-# Source0-md5:	14bb305c5956cd3ea2773719ec20abf5
+# Source0-md5:	b51fd48cb3c76566560ef22f447c8d89
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0.0}
