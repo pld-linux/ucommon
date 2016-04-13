@@ -6,12 +6,12 @@
 Summary:	GNU uCommon C++ - very light-weight C++ framework
 Summary(pl.UTF-8):	GNU uCommon C++ - bardzo lekki szkielet C++
 Name:		ucommon
-Version:	6.6.2
+Version:	7.0.0
 Release:	1
 License:	LGPL v3+ (libucommon and secure component), GPL v3+ with runtime exception (commoncpp2)
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/commoncpp/%{name}-%{version}.tar.gz
-# Source0-md5:	85dcf628bf9e12eb18b546ae0fd9b24b
+# Source0-md5:	90468af8f6692f0b6576189927414a39
 URL:		http://www.gnu.org/software/commoncpp/
 %{?with_apidocs:BuildRequires:	doxygen}
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0.0}
@@ -121,11 +121,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYRIGHT ChangeLog NEWS README README.secure SUPPORT TODO
 %attr(755,root,root) %{_libdir}/libcommoncpp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcommoncpp.so.7
+%attr(755,root,root) %ghost %{_libdir}/libcommoncpp.so.8
 %attr(755,root,root) %{_libdir}/libucommon.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libucommon.so.7
+%attr(755,root,root) %ghost %{_libdir}/libucommon.so.8
 %attr(755,root,root) %{_libdir}/libusecure.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libusecure.so.7
+%attr(755,root,root) %ghost %{_libdir}/libusecure.so.8
 
 %files devel
 %defattr(644,root,root,755)
@@ -167,6 +167,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pdetach
 %attr(755,root,root) %{_bindir}/scrub-files
 %attr(755,root,root) %{_bindir}/sockaddr
+%attr(755,root,root) %{_bindir}/urlout
 %attr(755,root,root) %{_bindir}/zerofill
 %{_mandir}/man1/args.1*
 %{_mandir}/man1/car.1*
@@ -175,4 +176,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/pdetach.1*
 %{_mandir}/man1/scrub-files.1*
 %{_mandir}/man1/sockaddr.1*
+%{_mandir}/man1/urlout.1*
 %{_mandir}/man1/zerofill.1*
