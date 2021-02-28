@@ -71,9 +71,7 @@ Statyczna biblioteka uCommon C++.
 Summary:	uCommon C++ API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki uCommon C++
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API and internal documentation for uCommon C++ library.
